@@ -15,6 +15,6 @@
 - 1x [Roda boba](https://www.vidadesilicio.com.br/produto/roda-boba-25x31mm-rodizio-giratorio/)
 - 1x [Potenciômetro 10k](https://www.vidadesilicio.com.br/produto/potenciometro-linear-10k/)
 - 1x [Display LCD 16x2](https://www.vidadesilicio.com.br/produto/display-lcd-1602-azul/)
-- 1x [Protoboard 1830 pinos](https://www.vidadesilicio.com.br/produto/protoboard-830/)
+- 1x [Protoboard 830 pinos](https://www.vidadesilicio.com.br/produto/protoboard-830/)
 - 1x [Powerbank 10000 mAh](https://www.amazon.com.br/Carregador-Pineng-Original-PN-951-10000mAh/dp/B076H6WSWQ/)
 - 1x [Sensor de linha 5 canais](https://www.vidadesilicio.com.br/produto/modulo-sensor-ir-5-canais-para-robo-seguidor-de-linha/)
