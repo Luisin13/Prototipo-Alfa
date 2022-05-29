@@ -4,7 +4,7 @@
 #include "caracteres.hpp"
 
 static const bool MotoresAtivados = false;
-static const uint8_t SENSORES_LINHA[] = {6, 22, 7, 24};
+static const uint8_t SENSORES_LINHA[] = {28, 30, 24, 22, 26};
 static const uint8_t MOTORES[] = {8, 9, 10, 11};
 
 LiquidCrystal lcd(13, 12, 5, 4, 3, 2);
@@ -34,21 +34,40 @@ void setup()
     lcd.createChar(4, caudaEsquerda);
     lcd.createChar(5, caudaDireita);
     lcd.createChar(6, grausSimbolo);
+
+    lcd.setCursor(0, 0);
+    if (!MotoresAtivados)
+    {
+        lcd.write("Alerta: Motores");
+        lcd.setCursor(0, 1);
+        lcd.write("desativados!");
+        delay(5000);
+    }
 }
 
 void loop()
 {
     giroscopio.read();
     lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print(giroscopio.getAzimuth());
-    if (!digitalRead(SENSORES_LINHA[0]) && !digitalRead(SENSORES_LINHA[1]))
+    if (!digitalRead(SENSORES_LINHA[0]) && !digitalRead(SENSORES_LINHA[1]) && !digitalRead(SENSORES_LINHA[2]) && !digitalRead(SENSORES_LINHA[3]))
     {
-        esquerda90();
+        frente();
+    }
+    else if (!digitalRead(SENSORES_LINHA[0]) && !digitalRead(SENSORES_LINHA[1]) && !digitalRead(SENSORES_LINHA[4]))
+    {
+        frente();
+    }
+    else if (!digitalRead(SENSORES_LINHA[2]) && !digitalRead(SENSORES_LINHA[3]) && !digitalRead(SENSORES_LINHA[4]))
+    {
+        frente();
+    }
+    else if (!digitalRead(SENSORES_LINHA[0]) && !digitalRead(SENSORES_LINHA[1]))
+    {
+        direita90();
     }
     else if (!digitalRead(SENSORES_LINHA[2]) && !digitalRead(SENSORES_LINHA[3]))
     {
-        direita90();
+        esquerda90();
     }
     else if (!digitalRead(SENSORES_LINHA[0]))
     {
@@ -129,15 +148,15 @@ void direita()
 
 void direita90()
 {
-    lcd.write((byte)1);
-    lcd.write((byte)4);
-    lcd.setCursor(7, 0);
     lcd.write("Virando a");
-    lcd.setCursor(5, 1);
+    lcd.setCursor(14, 0);
+    lcd.write((byte)5);
+    lcd.write((byte)2);
+    lcd.setCursor(0, 1);
     lcd.write("90");
     lcd.write((byte)6);
     lcd.write("direita");
-    delay(500);
+    delay(2000);
     const int anguloAntes = giroscopio.getAzimuth();
     int anguloTotal = anguloAntes + 90;
     if (anguloTotal > 360)
@@ -189,7 +208,7 @@ void esquerda90()
     lcd.write("90");
     lcd.write((byte)6);
     lcd.write("esquerda");
-    delay(500);
+    delay(2000);
     const int anguloAntes = giroscopio.getAzimuth();
     int anguloTotal = anguloAntes - 90;
     if (anguloTotal < 0)
