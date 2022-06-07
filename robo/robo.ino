@@ -16,6 +16,7 @@ void setup()
     Wire.begin();
 
     giroscopio.init();
+    giroscopio.setCalibration(-603, 702, -1713, 0, -793, 665);
 
     for (int sensor = 0; sensor < (sizeof(SENSORES_LINHA) / sizeof(SENSORES_LINHA[0])); sensor++)
     {

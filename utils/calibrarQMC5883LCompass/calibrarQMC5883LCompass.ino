@@ -6,6 +6,7 @@ SEM USO FUNCIONAL
 */
 
 #include <QMC5883LCompass.h>
+#include <LiquidCrystal.h>
 
 QMC5883LCompass giroscopio;
 
@@ -22,6 +23,7 @@ void setup()
 
     Serial.println("Isso ira calibrar o sensor de QMC5883L");
     Serial.println("Calibração ira começar em 5 segundos.");
+
     delay(5000);
 }
 
@@ -75,6 +77,7 @@ void loop()
     if (mudou && !pronto)
     {
         Serial.println("Calibrando... Continue a mexer o sensor.");
+        Serial.println("X: " + String(x) + " Y: " + String(y) + " Z: " + String(z));
         c = millis();
     }
     t = millis();
@@ -85,7 +88,7 @@ void loop()
         Serial.println("Pronto. Copie o código abaixo para o seu código.");
         Serial.println();
 
-        Serial.print("giroscopios.setCalibration(");
+        Serial.print("giroscopio.setCalibration(");
         Serial.print(dadoCalibracao[0][0]);
         Serial.print(", ");
         Serial.print(dadoCalibracao[0][1]);

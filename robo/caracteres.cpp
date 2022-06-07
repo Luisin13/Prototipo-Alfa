@@ -1,4 +1,5 @@
 #include "caracteres.hpp"
+#include <Arduino.h>
 
 byte setaEsquerda[8] = {
     0b00010,

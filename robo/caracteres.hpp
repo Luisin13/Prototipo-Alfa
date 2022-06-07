@@ -1,5 +1,6 @@
 #ifndef CARACTERES_HPP
 #define CARACTERES_HPP
+#include <Arduino.h>
 
 extern byte setaEsquerda[8];
 
