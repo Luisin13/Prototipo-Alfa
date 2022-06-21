@@ -3,7 +3,7 @@
 ## Bibliotecas
 
 - [Wire](https://www.arduino.cc/en/Reference/Wire)
-- [LiquidCrystal](https://www.arduino.cc/en/Reference/LiquidCrystal)
+- [LiquidCrystal_I2C](https://www.arduino.cc/reference/en/libraries/liquidcrystal-i2c/)
 - [QMC5883LCompass](https://github.com/mprograms/QMC5883LCompass)
 
 ## Componentes
@@ -18,3 +18,4 @@
 - 1x [Protoboard 830 pinos](https://www.vidadesilicio.com.br/produto/protoboard-830/)
 - 1x [Powerbank 10000 mAh](https://www.amazon.com.br/Carregador-Pineng-Original-PN-951-10000mAh/dp/B076H6WSWQ/)
 - 1x [Sensor de linha 5 canais](https://www.vidadesilicio.com.br/produto/modulo-sensor-ir-5-canais-para-robo-seguidor-de-linha/)
+- 2x [Sensor Ultrassônico HC-SR04](https://www.vidadesilicio.com.br/produto/hc-sr04-sensor-ultrassonico/)
